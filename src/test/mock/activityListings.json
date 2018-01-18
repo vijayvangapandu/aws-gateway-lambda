@@ -1,0 +1,106 @@
+{
+  "fields": [],
+  "result": true,
+  "data": {
+    "groupCount": {
+      "fav-me": 0,
+      "comm": 0,
+      "social": 0,
+      "profile": 0,
+      "incognito": 0,
+      "photo": 0,
+      "photoLike": 0,
+      "mutual-fav": 0,
+      "wvm": 2
+    },
+    "totalPage": 1,
+    "activities": [
+      {
+        "photoHeight": 210,
+        "photoURL": "http://r3-photos.eharmony.com.global.prod.fastly.net/photos/v1/photo/ICON/P/G1f7R6HaFK0h%2FF3arQwU6Q%3D%3D.jpg?g=2",
+        "photoWidth": 167,
+        "thumbPhoto": {
+          "height": 159,
+          "photoIndex": 0,
+          "photoUrl": "http://r3-photos.eharmony.com.global.prod.fastly.net/photos/v1/photo/THUMB/P/G1f7R6HaFK0h%2FF3arQwU6Q%3D%3D.jpg?g=2",
+          "width": 200
+        },
+        "activityDate": {
+          "date": 26,
+          "day": 3,
+          "hours": 10,
+          "minutes": 47,
+          "month": 3,
+          "seconds": 51,
+          "time": 1493228871688,
+          "timezoneOffset": 420,
+          "year": 117
+        },
+        "aggregateCount": "",
+        "commType": null,
+        "matchLocation": "0",
+        "matchPpyRecipient": false,
+        "profileFieldName": "",
+        "ratingValue": "",
+        "resourceId": "",
+        "resourceValue": "",
+        "reviewedDate": null,
+        "secureCallNumber": null,
+        "matchedUserAge": 0,
+        "encryptedMatchedUserId": "",
+        "id": "fd1cdde9-c984-484d-9ac8-929d68b2b197",
+        "timeStamp": "2017-04-26T17:47:51.688+0000",
+        "matchUserId": "70529027",
+        "messageText": "",
+        "matchId": "19960054900",
+        "photoUrls": null,
+        "matchFirstName": "Anne",
+        "category": "access.profile",
+        "resourceType": ""
+      },
+      {
+        "photoHeight": 210,
+        "photoURL": "http://r3-photos.eharmony.com.global.prod.fastly.net/photos/v1/photo/ICON/P/wC7LG0foEefd507m%2B5lw0g%3D%3D.jpg?g=2",
+        "photoWidth": 167,
+        "thumbPhoto": {
+          "height": 159,
+          "photoIndex": 0,
+          "photoUrl": "http://r3-photos.eharmony.com.global.prod.fastly.net/photos/v1/photo/THUMB/P/wC7LG0foEefd507m%2B5lw0g%3D%3D.jpg?g=2",
+          "width": 200
+        },
+        "activityDate": {
+          "date": 26,
+          "day": 3,
+          "hours": 10,
+          "minutes": 34,
+          "month": 3,
+          "seconds": 8,
+          "time": 1493228048214,
+          "timezoneOffset": 420,
+          "year": 117
+        },
+        "aggregateCount": "",
+        "commType": null,
+        "matchLocation": "0",
+        "matchPpyRecipient": false,
+        "profileFieldName": "",
+        "ratingValue": "",
+        "resourceId": "",
+        "resourceValue": "",
+        "reviewedDate": null,
+        "secureCallNumber": null,
+        "matchedUserAge": 0,
+        "encryptedMatchedUserId": "",
+        "id": "7ac71ceb-afc0-4158-8024-7be6756e292a",
+        "timeStamp": "2017-04-26T17:34:08.214+0000",
+        "matchUserId": "70529022",
+        "messageText": "",
+        "matchId": "19960059897",
+        "photoUrls": null,
+        "matchFirstName": "Sara",
+        "category": "access.profile",
+        "resourceType": ""
+      }
+    ]
+  }
+}
