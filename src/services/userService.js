@@ -8,6 +8,7 @@ UserService.prototype.getUser = function(accessToken, successCallback, failureCa
     this.userRestClient.getUser(accessToken, successCallback, failureCallback);
 };
 
+/*
 UserService.prototype.getAuthUser = function(accessToken) {
     var response = [];
     this.userRestClient.getUser(accessToken, function(data) {
@@ -17,5 +18,6 @@ UserService.prototype.getAuthUser = function(accessToken) {
     });
     return response;
 };
+*/
 
 module.exports = UserService;

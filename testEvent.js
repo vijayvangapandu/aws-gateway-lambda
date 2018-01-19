@@ -1,6 +1,7 @@
 var event = {
-    "authorizationToken": "901df9a3-6b38-4a5a-a146-1532afaeda2a",
-        "methodArn": "arn:aws:execute-api:[region]:[account_id]:[restApiId]/[stage]/[method]/[resourcePath]",
+    "authorizationToken": "Bearer 901df9a3-6b38-4a5a-a146-1532afaeda2a",
+        //"methodArn": "arn:aws:execute-api:[region]:[account_id]:[restApiId]/[stage]/[method]/[resourcePath]",
+        "methodArn": "arn:aws:execute-api:us-west-2:788346483045:thpfdcy0sl/qa/GET/PhotoDataSave",
         "type": "TOKEN"
 };
 
@@ -16,4 +17,5 @@ authHandler['handler'] (event, {
     }
 }, function(status, data) {
     console.log(data);
+    console.log(data.policyDocument.Statement);
 });

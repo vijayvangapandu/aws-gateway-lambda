@@ -1,4 +1,4 @@
-# aws lambda gatewa
+# aws lambda gateway
 The lambda implementation of the public api to photo service integraton.
  
 

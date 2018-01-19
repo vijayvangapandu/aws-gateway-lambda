@@ -139,8 +139,9 @@ AuthPolicy.prototype = (function AuthPolicyClass() {
         if (resource.substring(0, 1) === '/') {
             cleanedResource = resource.substring(1, resource.length);
         }
-        const resourceArn = 'arn:aws:execute-api:${this.region}:${this.awsAccountId}:${this.restApiId}/${this.stage}/${verb}/${cleanedResource}';
+        const resourceArn = `arn:aws:execute-api:${this.region}:${this.awsAccountId}:${this.restApiId}/${this.stage}/${verb}/${cleanedResource}`;
 
+        console.log(`resourceArn is: ${resourceArn}`);
         if (effect.toLowerCase() === 'allow') {
             this.allowMethods.push({
                 resourceArn,
@@ -367,6 +368,9 @@ function userApiFailureCallBack(error, policy, callback) {
 exports.handler = (event, context, callback) => {
     console.log('Client token:', event.authorizationToken);
     console.log('Method ARN:', event.methodArn);
+    const [bearerName, bearerToken] = event.authorizationToken.split(' ');
+    //var bearerToken = event.authorizationToken.split(" ")[1];
+    console.log(`bearer token: ${bearerToken}`);
 
     var UserRestClient = require('./services/rest/userRestClient');
     var UserService = require('./services/userService');
@@ -417,7 +421,7 @@ exports.handler = (event, context, callback) => {
     const policy = new AuthPolicy(principalId, awsAccountId, apiOptions);
     //var authServResponse = userService.getAuthUser(event.authorizationToken);
     var authServResponse = [];
-    userService.getUser(event.authorizationToken, function(user) {
+    userService.getUser(bearerToken, function(user) {
         userApiSuccessCallBack(user, policy, callback);
     }, function(error) {
         console.log('Error while fetching user for token ${event.authorizationToken}')

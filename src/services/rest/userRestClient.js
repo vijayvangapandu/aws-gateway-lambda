@@ -1,6 +1,6 @@
 'use strict';
 
-var Promise = require('promise');
+//var Promise = require('promise');
 //var TimedMetric = require('../../metrics/timedMetric');
 
 const userPath = "/auth/v1.0/me?AWS=true";
@@ -14,7 +14,7 @@ UserRestClient.prototype.getUser = function(accessToken, successCallback, failur
         //TimedMetric.recordTime("getUser", successCallback),
         //TimedMetric.recordTime("getUserErrors", failureCallback));
 };
-
+/*
 UserRestClient.prototype.getUserAsync = function(accessToken) {
     var _this = this;
     return new Promise(function (fulfill, reject) {
@@ -24,6 +24,6 @@ UserRestClient.prototype.getUserAsync = function(accessToken) {
             reject(error);
         });
     });
-};
+};*/
 
 module.exports = UserRestClient;
