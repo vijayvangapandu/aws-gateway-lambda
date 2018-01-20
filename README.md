@@ -30,4 +30,4 @@ npm run release
 Then manually update the version in packages.json to the next version.
 
 How to test?
-curl -iv -H "Authorization: Bearer 901df9a3-6b38-4a5a-a146-1532afaeda2a" https://thpfdcy0sl.execute-api.us-west-2.amazonaws.com/qa/PhotoDataSave
+curl -iv -H "Authorization: Bearer xyz" https://thpfdcy0sl.execute-api.us-west-2.amazonaws.com/qa/PhotoDataSave
