@@ -2,25 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5372bdd-9343-49e5-8890-056795a0ad3a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/auth/authHandlers.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/auth/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/auth/src/config/dev-config.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/auth/src/config/prod-config.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/auth/src/metrics/cloudWatchMetric.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/auth/src/metrics/countMetric.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/auth/src/metrics/timedMetric.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/auth/src/services/rest/restClient.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/auth/src/services/rest/userRestClient.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/auth/src/services/userService.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/auth/test/testEvent.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/photo-data/test/testPhotoDataHandlerEvent.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/index.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/publishing_copy/icons/eh-icon-108.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/publishing_copy/icons/eh-icon-512.png" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/photoDataGetHandler.js" afterPath="$PROJECT_DIR$/photo-data/photoDataHandler.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testEvent.js" afterPath="$PROJECT_DIR$/auth/test/testEvent.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testPhotoDataHandlerEvent.js" afterPath="$PROJECT_DIR$/photo-data/test/testPhotoDataHandlerEvent.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/authHandlers.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/config/dev-config.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/config/prod-config.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/filters/authenticationFilter.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/filters/errorFilterChain.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/filters/loggingFilter.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/handlers/authHandlers.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/handlers/authHandlersV1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/handlers/authHandlersV2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/metrics/cloudWatchMetric.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/metrics/countMetric.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/metrics/timedMetric.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/services/rest/restClient.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/services/rest/userRestClient.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/services/userService.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,15 +53,45 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="335">
-                <caret line="32" column="38" lean-forward="false" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+              <first_editor relative-caret-position="60">
+                <caret line="4" column="52" lean-forward="false" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
                 <folding />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="787956385b3f4a4d2913aec9b4f8d0ca.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.nyc_output/787956385b3f4a4d2913aec9b4f8d0ca.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="get-pip.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/get-pip.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-12176">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cec611c32f5444c281c32a44b80cdac2.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.nyc_output/cec611c32f5444c281c32a44b80cdac2.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -155,9 +182,6 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/src/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
@@ -788,15 +812,16 @@
       <updated>1515710074758</updated>
       <workItem from="1515710076548" duration="732000" />
       <workItem from="1515711118665" duration="6099000" />
-      <workItem from="1516217618492" duration="31973000" />
+      <workItem from="1516217618492" duration="32129000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38804000" />
+    <option name="totallyTimeSpent" value="38960000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="831" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -812,7 +837,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21316166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21316166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2078346" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -974,14 +999,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/get-pip.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1255,11 +1272,35 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="335">
-            <caret line="32" column="38" lean-forward="false" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+          <first_editor relative-caret-position="60">
+            <caret line="4" column="52" lean-forward="false" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.nyc_output/cec611c32f5444c281c32a44b80cdac2.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.nyc_output/787956385b3f4a4d2913aec9b4f8d0ca.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/get-pip.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12176">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -1,7 +1,8 @@
 # aws lambda gateway
 The lambda implementation of the public api to photo service integraton.
  
-
+To build and publish components, navigate to specific folder and run the below commands.
+ex: for auth module navigate to auth folder: cd auth
 To run mocha tests:
 ```
 cd src
