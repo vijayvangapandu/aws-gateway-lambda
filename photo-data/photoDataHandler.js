@@ -5,6 +5,7 @@ console.log('Loading function');
 //const doc = require('dynamodb-doc');
 //const dynamo = new doc.DynamoDB();
 
+
 /**
  * Demonstrates a simple HTTP endpoint using API Gateway. You have full
  * access to the request and response payload, including headers and
@@ -18,19 +19,11 @@ console.log('Loading function');
 exports.handler = (event, context, callback) => {
 
     var eventString = JSON.stringify(event, null, 2);
-    //var contextSring = JSON.stringify(context, null, 2);
-    console.log('Received event:', eventString);
-    //console.log('Received Context:', contextSring);
-
-    const done = (err, res) => callback(null, {
-        statusCode: err ? '400' : '200',
-        body: err ? err.message : JSON.stringify(res),
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    });
+    //console.log('Received event:', eventString);
 
     var responseValue = {};
+    var PhotoDataService = require('./src/service/PhotoDataService');
+    var photoDataService = new PhotoDataService();
     switch (event.httpMethod) {
         case 'DELETE':
             //dynamo.deleteItem(JSON.parse(event.body), done);
@@ -39,7 +32,7 @@ exports.handler = (event, context, callback) => {
             break;
         case 'GET':
             //dynamo.scan({ TableName: event.queryStringParameters.TableName }, done);
-            console.log('Scan Item..');
+            console.log('GET Item..');
             responseValue = generateGetResponse("Scan Successful...");
             break;
         case 'POST':
@@ -49,11 +42,17 @@ exports.handler = (event, context, callback) => {
             break;
         case 'PUT':
             //dynamo.updateItem(JSON.parse(event.body), done);
-            console.log('Update Item..');
+            console.log('Update Item with body..');
+            var body = event.body;
+            console.log(body);
+            photoDataService.createPhoto(body, generateGetResponse, generateGetResponse);
             responseValue = generateGetResponse("PUT Successful...");
             break;
         default:
             done(new Error(`Unsupported method "${event.httpMethod}"`));
+    }
+    if(event.httpMethod && event.httpMethod == 'PUT') {
+        console.log("PUT Method with body:", event.body);
     }
     // Help function to generate an IAM policy
     var responseString = '['+eventString  ;

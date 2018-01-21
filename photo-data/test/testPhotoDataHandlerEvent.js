@@ -1,5 +1,6 @@
 var event = {
-    "body": "{\"test\":\"body\"}",
+    //"body": "{\"test\":\"body\"}",
+    "body": {"UserId":"5077937","PhotoId": "1","Index":1,"Status": 1,"Caption": "My Second Test Photo","CStatus": 1},
     "resource": "/{proxy+}",
     "requestContext": {
         "resourceId": "123456",
@@ -8,7 +9,7 @@ var event = {
             "principalId": "user|a1b2c3d4"
         },
         "resourcePath": "/{proxy+}",
-        "httpMethod": "POST",
+        "httpMethod": "PUT",
         "requestId": "c6af9ac6-7b61-11e6-9a41-93e8deadbeef",
         "accountId": "123456789012",
         "identity": {
@@ -52,7 +53,7 @@ var event = {
     "pathParameters": {
         "proxy": "path/to/resource"
     },
-    "httpMethod": "POST",
+    "httpMethod": "PUT",
     "stageVariables": {
         "baz": "qux"
     },
