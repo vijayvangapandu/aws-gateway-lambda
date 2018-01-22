@@ -1,31 +1,33 @@
 'use strict';
 
-function successCallback(data) {
-    console.log("Created photo Item: ", data);
-}
-function failureCallback(error) {
-    console.log("Failed to save photo Item, with error: ", error);
-}
-function PhotoDataService() {
+const PhotoDataRepository = require("../dao/PhotoDataRepository");
+
+function PhotoDataService(config) {
     console.log("loading PhotoDataService...");
+    this.photoDataRepository = new PhotoDataRepository(config);
 }
 
-PhotoDataService.prototype.createPhoto = function(photoItem, successCallback, failureCallback) {
-    var params = {
+PhotoDataService.prototype.createPhoto = function(photoItem, successSaveCallback, failureSaveCallback) {
+    const params = {
         TableName: "PhotoData",
         Item: photoItem
     };
-    var PhotoDataRepository = require("../dao/PhotoDataRepository");
-    var photoDataRepository = new PhotoDataRepository();
-    photoDataRepository.createPhoto(params, successSaveCallback, failureSaveCallback);
-    function successSaveCallback(data) {
-        console.log("Created photo Item: ", data);
-        successCallback(data);
-    }
-    function failureSaveCallback(error) {
-        console.log("Failed to save photo Item, with error: ", error);
-        failureCallback(error);
-    }
+
+    this.photoDataRepository.createPhoto(params, successSaveCallback, failureSaveCallback);
+
+};
+
+
+PhotoDataService.prototype.getPhotoById = function(userId, photoId, successSaveCallback, failureSaveCallback) {
+
+    this.photoDataRepository.getPhotoById(userId, photoId, successSaveCallback, failureSaveCallback);
+
+};
+
+PhotoDataService.prototype.deletePhotoById = function(userId, photoId, successSaveCallback, failureSaveCallback) {
+
+    this.photoDataRepository.deletePhotoById(userId, photoId, successSaveCallback, failureSaveCallback);
+
 };
 
 module.exports = PhotoDataService;

@@ -1,6 +1,6 @@
 var event = {
     //"body": "{\"test\":\"body\"}",
-    "body": {"UserId":"5077937","PhotoId": "1","Index":1,"Status": 1,"Caption": "My Second Test Photo","CStatus": 1},
+    "body": {"UserId":"5077941","PhotoId": "2","Index":1,"Status": 1,"Caption": "My third Test Photo","CStatus": 1},
     "resource": "/{proxy+}",
     "requestContext": {
         "resourceId": "123456",

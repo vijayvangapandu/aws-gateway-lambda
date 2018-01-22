@@ -1,29 +1,32 @@
 'use strict';
 
-console.log('Loading function');
+console.log('Loading photoDataHandler...');
 
-//const doc = require('dynamodb-doc');
-//const dynamo = new doc.DynamoDB();
+const environment = process.env.ENVIRONMENT;
 
+var evnResolved = 'dev';
+if(environment) {
+    evnResolved = environment;
+}
+const config = require('./src/config/' + evnResolved + '-config.json');
+const PhotoDataService = require('./src/service/PhotoDataService');
+const photoDataService = new PhotoDataService(config);
 
-/**
- * Demonstrates a simple HTTP endpoint using API Gateway. You have full
- * access to the request and response payload, including headers and
- * status code.
- *
- * To scan a DynamoDB table, make a GET request with the TableName as a
- * query string parameter. To put, update, or delete an item, make a POST,
- * PUT, or DELETE request respectively, passing in the payload to the
- * DynamoDB API as a JSON body.
- */
 exports.handler = (event, context, callback) => {
 
     var eventString = JSON.stringify(event, null, 2);
-    //console.log('Received event:', eventString);
-
+    var principalIdStr = event.requestContext.authorizer.principalId;
     var responseValue = {};
-    var PhotoDataService = require('./src/service/PhotoDataService');
-    var photoDataService = new PhotoDataService();
+
+    function successSaveCallback(data) {
+        console.log("Created photo Item: ", data);
+        responseValue = data;
+    }
+    function failureSaveCallback(error) {
+        console.log("Failed to save photo Item, with error: ", error);
+        throw error;
+    }
+
     switch (event.httpMethod) {
         case 'DELETE':
             //dynamo.deleteItem(JSON.parse(event.body), done);
@@ -36,41 +39,24 @@ exports.handler = (event, context, callback) => {
             responseValue = generateGetResponse("Scan Successful...");
             break;
         case 'POST':
-            //dynamo.putItem(JSON.parse(event.body), done);
-            console.log('PUT Item..');
-            responseValue = generateGetResponse("Post Successful...");
+            console.log("Creating Item with body..", event.body);
+            photoDataService.createPhoto(event.body, successSaveCallback, failureSaveCallback);
             break;
         case 'PUT':
-            //dynamo.updateItem(JSON.parse(event.body), done);
-            console.log('Update Item with body..');
-            var body = event.body;
-            console.log(body);
-            photoDataService.createPhoto(body, generateGetResponse, generateGetResponse);
-            responseValue = generateGetResponse("PUT Successful...");
+            console.log("Updating Item with body..", event.body);
+            photoDataService.createPhoto(event.body, successSaveCallback, failureSaveCallback);
             break;
         default:
             done(new Error(`Unsupported method "${event.httpMethod}"`));
     }
-    if(event.httpMethod && event.httpMethod == 'PUT') {
-        console.log("PUT Method with body:", event.body);
-    }
-    // Help function to generate an IAM policy
-    var responseString = '['+eventString  ;
-    if(event.requestContext && event.requestContext.authorizer) {
 
-        //console.log('authorizer PrincipalId:', event.requestContext.authorizer);
-        var principalIdStr = event.requestContext.authorizer.principalId;
-        console.log(`PrincipalId: ${principalIdStr}`);
-        responseString = responseString + ',{principal: '+principalIdStr +'}]';
-    }
-
-    console.log('ResponseString: ', responseString);
-    callback(null, generateGetResponse(responseString));
+    callback(null, generateGetResponse(responseValue));
 };
 
-var generateGetResponse = function(eventString) {
+var generateGetResponse = function(responseValue) {
+    console.log("Response data:", responseValue);
     var responseBody = {
-        "inputEvent": eventString,
+        "response": responseValue,
     };
 
     var response = {

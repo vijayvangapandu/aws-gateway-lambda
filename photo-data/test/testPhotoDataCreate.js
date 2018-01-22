@@ -21,20 +21,27 @@
 
  });*/
 
-var photoItem =  {
-    "UserId":  "75077938",
+const exprextedPhotoItem =  {
+    "UserId":  "75077939",
     "PhotoId": "11",
     "Index":  1,
     "Status": 1,
     "Caption": "My First Test Photo",
     "CStatus": 1
 };
+const userId = "75077939";
+const photoId = "11";
+var environment = process.env.ENVIRONMENT;
+var evnResolved = 'dev';
+if(environment) {
+    evnResolved = environment;
+}
+const config = require('../src/config/' + evnResolved + '-config.json');
 
-process.env.ENVIRONMENT = "dev";
 var PhotoDataService = require("../src/service/PhotoDataService");
-var photoDataService = new PhotoDataService();
+var photoDataService = new PhotoDataService(config);
 
-photoDataService.createPhoto(photoItem, successCallback, failureCallback);
+photoDataService.createPhoto(exprextedPhotoItem, successCallback, failureCallback);
 
 function successCallback(data) {
     console.log("Created photo Item: ", data);
