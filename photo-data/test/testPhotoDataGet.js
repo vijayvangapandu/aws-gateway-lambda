@@ -1,14 +1,14 @@
 
 const exprextedPhotoItem =  {
-    "UserId":  "75077939",
-    "PhotoId": "11",
+    "UserId":  "75077954",
+    "PhotoId": "2",
     "Index":  1,
     "Status": 1,
     "Caption": "My First Test Photo",
     "CStatus": 1
 };
-const userId = "75077939";
-const photoId = "11";
+const userId = "75077954";
+const photoId = "2";
 var environment = process.env.ENVIRONMENT;
 var evnResolved = 'dev';
 if(environment) {

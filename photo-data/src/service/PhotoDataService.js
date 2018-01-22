@@ -30,4 +30,23 @@ PhotoDataService.prototype.deletePhotoById = function(userId, photoId, successSa
 
 };
 
+PhotoDataService.prototype.updatePhotoStatus= function(userId, photoId, status, successSaveCallback, failureSaveCallback) {
+
+    this.photoDataRepository.updatePhotoStatus(userId, photoId, status, successSaveCallback, failureSaveCallback);
+
+};
+
+PhotoDataService.prototype.getAllUserPhotos = function(userId, successSaveCallback, failureSaveCallback) {
+
+    this.photoDataRepository.getAllUserPhotos(userId, successSaveCallback, failureSaveCallback);
+
+};
+
+PhotoDataService.prototype.getAllUserApprovedPhotos = function(userId, successSaveCallback, failureSaveCallback) {
+
+    this.photoDataRepository.getAllUserApprovedPhotos(userId, successSaveCallback, failureSaveCallback);
+
+};
+
+
 module.exports = PhotoDataService;

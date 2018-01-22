@@ -22,8 +22,8 @@
  });*/
 
 const exprextedPhotoItem =  {
-    "UserId":  "75077939",
-    "PhotoId": "11",
+    "UserId":  "75077954",
+    "PhotoId": "1",
     "Index":  1,
     "Status": 1,
     "Caption": "My First Test Photo",
