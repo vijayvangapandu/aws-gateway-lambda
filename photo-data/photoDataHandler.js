@@ -16,11 +16,13 @@ exports.handler = (event, context, callback) => {
 
     var eventString = JSON.stringify(event, null, 2);
     var principalIdStr = event.requestContext.authorizer.principalId;
-    var responseValue = {};
+    const [userId, locale, userStatus] = principalIdStr.split('|');
+   // var responseValue = {};
 
     function successSaveCallback(data) {
-        console.log("Created photo Item: ", data);
-        responseValue = data;
+        console.log("Call successful and response is: ", data);
+        //responseValue = data;
+        callback(null, generateGetResponse(data));
     }
     function failureSaveCallback(error) {
         console.log("Failed to save photo Item, with error: ", error);
@@ -31,30 +33,40 @@ exports.handler = (event, context, callback) => {
         case 'DELETE':
             //dynamo.deleteItem(JSON.parse(event.body), done);
             console.log('Deleted Item..');
-            responseValue = generateGetResponse("Delete Successful...");
+            //responseValue = generateGetResponse("Delete Successful...");
+            callback(null, generateGetResponse("Delete Successful..."));
             break;
         case 'GET':
             //dynamo.scan({ TableName: event.queryStringParameters.TableName }, done);
+            if(event.pathParameters && event.pathParameters.photoId) {
+                const photoId = event.pathParameters.photoId;
+                photoDataService.getPhotoById(userId, photoId, successSaveCallback, failureSaveCallback);
+            } else {
+                photoDataService.getAllUserPhotos(userId, successSaveCallback, failureSaveCallback);
+            }
             console.log('GET Item..');
-            responseValue = generateGetResponse("Scan Successful...");
+            //responseValue = generateGetResponse("Scan Successful...");
+            //callback(null, generateGetResponse(responseValue));
             break;
         case 'POST':
             console.log("Creating Item with body..", event.body);
             photoDataService.createPhoto(event.body, successSaveCallback, failureSaveCallback);
+            //callback(null, generateGetResponse(responseValue));
             break;
         case 'PUT':
             console.log("Updating Item with body..", event.body);
             photoDataService.createPhoto(event.body, successSaveCallback, failureSaveCallback);
+            //callback(null, generateGetResponse(responseValue));
             break;
         default:
             done(new Error(`Unsupported method "${event.httpMethod}"`));
+            failureSaveCallback(new Error(`Unsupported method "${event.httpMethod}"`));
     }
 
-    callback(null, generateGetResponse(responseValue));
 };
 
 var generateGetResponse = function(responseValue) {
-    console.log("Response data:", responseValue);
+    //console.log("Response data:", responseValue);
     var responseBody = {
         "response": responseValue,
     };
@@ -65,6 +77,7 @@ var generateGetResponse = function(responseValue) {
             "my_header": "ResponseFromPhotoGetAPI"
         },
         "body": JSON.stringify(responseBody),
+        //"body": responseBody,
         "isBase64Encoded": false
     };
 

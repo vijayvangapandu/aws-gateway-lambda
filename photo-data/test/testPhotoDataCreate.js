@@ -22,15 +22,15 @@
  });*/
 
 const exprextedPhotoItem =  {
-    "UserId":  "75077954",
-    "PhotoId": "1",
-    "Index":  1,
-    "Status": 1,
-    "Caption": "My First Test Photo",
+    "UserId":  "73511180",
+    "PhotoId": "2",
+    "Index":  2,
+    "Status": 2,
+    "Caption": "My Second Test Photo",
     "CStatus": 1
 };
-const userId = "75077939";
-const photoId = "11";
+const userId = "73511180";
+const photoId = "2";
 var environment = process.env.ENVIRONMENT;
 var evnResolved = 'dev';
 if(environment) {
