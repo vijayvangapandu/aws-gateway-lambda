@@ -1,0 +1,9 @@
+{
+  "applicationId" : "amzn-2345674-1a056124ab21",
+  "deviceId": "6495b07249101ff3a8efedbebc7d4d12",
+  "platform": "papi",
+  "papiHost": "www-r3.eharmony.com",
+  "papiPort": 443,
+  "endpoint": "https://dynamodb.us-west-2.amazonaws.com",
+  "region": "us-west-2"
+}

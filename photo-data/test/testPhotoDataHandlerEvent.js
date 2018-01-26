@@ -1,14 +1,14 @@
 var event = {
-    "body": "{\"test\":\"body\"}",
+    "body": {"UserId":"5077941","PhotoId": "2","Index":1,"Status": 1,"Caption": "My third Test Photo","CStatus": 1},
     "resource": "/{proxy+}",
     "requestContext": {
         "resourceId": "123456",
         "apiId": "1234567890",
         "authorizer": {
-            "principalId": "user|a1b2c3d4"
+            "principalId": "5077941|en_US|2"
         },
         "resourcePath": "/{proxy+}",
-        "httpMethod": "POST",
+        "httpMethod": "GET",
         "requestId": "c6af9ac6-7b61-11e6-9a41-93e8deadbeef",
         "accountId": "123456789012",
         "identity": {
@@ -52,7 +52,7 @@ var event = {
     "pathParameters": {
         "proxy": "path/to/resource"
     },
-    "httpMethod": "POST",
+    "httpMethod": "GET",
     "stageVariables": {
         "baz": "qux"
     },
@@ -64,12 +64,13 @@ var photoDataHandler = require("../photoDataHandler");
 
 photoDataHandler['handler'] (event, {
     'succeed': function (data) {
-        console.log(JSON.stringify(data, null, 2));
+        //console.log(JSON.stringify(data, null, 2));
+        console.log("call succeded:", data);
     },
     'fail': function (error) {
         console.log(error);
     }
 }, function(status, data) {
-    console.log(data);
+    console.log("Response Data for the call:", data);
 
 });

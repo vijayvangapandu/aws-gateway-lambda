@@ -331,7 +331,7 @@ function userApiSuccessCallBack(user, policy, callback) {
         //CountMetric.recordCount("AuthSuccess");
         context['userName'] = user.firstName;
         console.log('User is: ' , user);
-        policy.principalId = `user|${user.ehUserId}|${user.locale}|${user.userStatusId}`;
+        policy.principalId = `${user.ehUserId}|${user.locale}|${user.userStatusId}`;
     } else {
         policy.denyAllMethods();
         //CountMetric.recordCount("AuthErrors");
